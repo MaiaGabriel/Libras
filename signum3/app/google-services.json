@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "179190412006",
+    "firebase_url": "https://signum-a5a6b.firebaseio.com",
+    "project_id": "signum-a5a6b",
+    "storage_bucket": "signum-a5a6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179190412006:android:309bde926953f96d",
+        "android_client_info": {
+          "package_name": "com.example.signum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179190412006-n65ecm9bubap1tlp9m42u0tavb581rca.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.signum",
+            "certificate_hash": "85abca9c3ce8a27eb37d0687bb60d8ca899b6d7d"
+          }
+        },
+        {
+          "client_id": "179190412006-b7mvmq29re6mfb49ligigi4dmo5c3rtr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzP_5rWPCEKt81uHcQu5_dZhaKQROmlhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179190412006-b7mvmq29re6mfb49ligigi4dmo5c3rtr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

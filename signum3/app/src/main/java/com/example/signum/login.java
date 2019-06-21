@@ -1,5 +1,6 @@
 package com.example.signum;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +20,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.example.signum.Model.Users;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class login extends AppCompatActivity {
+
+    private String parentDbName = "Users";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,27 +65,69 @@ public class login extends AppCompatActivity {
     // em seguida, ao clicar o botao, ele abrira a activity bemvindo
     public void entrarClicado(View view) {
 
-        Intent intent = new Intent(this, MainActivity.class);
-
         EditText inputEmail = (EditText) findViewById(R.id.editText);
         EditText inputSenha = (EditText) findViewById(R.id.editText2);
 
-        //verifica senha
-        UsuarioDAO2 usuarioDAO2 = new UsuarioDAO2();
-        Usuario2 usuario2 = usuarioDAO2.getUsuario(inputEmail.getText().toString(),
-                inputSenha.getText().toString());
+        String email = inputEmail.getText().toString();
+        String senha = inputSenha.getText().toString();
+        LoginUser(email,senha);
+
+    }
+
+    private void LoginUser(String email, String senha)
+    {
+
+         if(TextUtils.isEmpty(email))
+         {
+            Toast.makeText(this, "por favor escreva seu email", Toast.LENGTH_SHORT).show();
+         }
+         else if(TextUtils.isEmpty(senha))
+         {
+                Toast.makeText(this, "por favor escreva sua senha", Toast.LENGTH_SHORT).show();
+         }
+         else
+         {
+             Toast.makeText(this,"por favor, aguarde enquanto estamos checando suas credenciais",Toast.LENGTH_SHORT).show();
+             AllowAccessToAccount(email,senha);
+         }
 
 
-        if (usuario2 != null) {
-            intent.putExtra("usuario", usuario2);
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "Usuário e/ou Senha inválidos!",
-                    Toast.LENGTH_SHORT).show();
+
+
+    }
+
+    private void AllowAccessToAccount(final String email, final String senha) {
+        final DatabaseReference RootRef;
+        RootRef = FirebaseDatabase.getInstance().getReference();
+
+        RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child(parentDbName).child(email).exists()) {
+                    Users usuarioData = dataSnapshot.child(parentDbName).child(email).getValue(Users.class);
+
+                    if (usuarioData.getEmail().equals(email)) {
+                        if (usuarioData.getSenha().equals(senha)) {
+                            Intent intent2 = new Intent(login.this, MainActivity.class);
+                            startActivity(intent2);
+
+                        }
+                    }
+                }
+                else
+                {
+                    Toast.makeText(login.this, "A conta com esse" + email + "não existe!", Toast.LENGTH_SHORT).show();
+
+
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
         }
 
 
-
+        );
     }
 
 

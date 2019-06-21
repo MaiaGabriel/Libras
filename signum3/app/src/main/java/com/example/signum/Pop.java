@@ -1,6 +1,7 @@
 package com.example.signum;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -8,6 +9,7 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class Pop extends Activity {
+
     public void onCreate (Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -20,7 +22,6 @@ public class Pop extends Activity {
         int height = dm.heightPixels;
 
         getWindow().setLayout((int)(width*1),(int)(height*.8));
-
 
         //displays a video file
         VideoView videoView = (VideoView) findViewById(R.id.videoView);

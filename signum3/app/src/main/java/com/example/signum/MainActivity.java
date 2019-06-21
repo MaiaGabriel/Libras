@@ -22,8 +22,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -127,6 +130,25 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
 
     }
+
+    public void glossario(View view)
+    {
+
+        Intent intent = new Intent(this, ListaGlossario.class);
+        startActivity(intent);
+
+    }
+
+    public void botaotreinamento(View view)
+    {
+
+        Intent intent = new Intent(this, ListaTreinamento.class);
+        startActivity(intent);
+
+    }
+
+
+
 
 
 }
