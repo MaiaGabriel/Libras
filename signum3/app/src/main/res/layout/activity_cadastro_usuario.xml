@@ -67,18 +67,19 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="355dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        android:background="#E91E63"
+        android:background="@drawable/roundcornerpink"
         android:onClick="onconcluir"
         android:text="Concluir"
         android:textColor="#0E0D0D"
         android:textColorHighlight="#00CC2222"
         android:textColorHint="#E24629"
         android:textColorLink="#00C02A2A"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner2" />

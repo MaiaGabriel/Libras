@@ -36,8 +36,8 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Intent intent = new Intent(this,Pop.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this,Pop.class);
+//        startActivity(intent);
 
     }
 
@@ -110,7 +110,7 @@ public class login extends AppCompatActivity {
                         if (usuarioData.getSenha().equals(senha)) {
                             Intent intent2 = new Intent(login.this, MainActivity.class);
                             startActivity(intent2);
-
+                            finish();
                         }
                     }
                 }

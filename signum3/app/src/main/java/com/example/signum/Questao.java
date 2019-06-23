@@ -12,15 +12,17 @@ public class Questao implements Parcelable {
     private String alternativa2;
     private String alternativa3;
     private String alternativa4;
+    private String alternativaCorreta;
     private String urlVideo;
 
-    public  Questao(String descricao, String alternativa1,String alternativa2,String alternativa3,String alternativa4, String urlVideo)
+    public  Questao(String descricao, String alternativa1,String alternativa2,String alternativa3,String alternativa4,String alternativaCorreta , String urlVideo)
     {
         this.descricao = descricao;
         this.alternativa1 = alternativa1;
         this.alternativa2 = alternativa2;
         this.alternativa3 = alternativa3;
         this.alternativa4 = alternativa4;
+        this.alternativaCorreta = alternativaCorreta;
         this.urlVideo = urlVideo;
     }
 
@@ -30,6 +32,7 @@ public class Questao implements Parcelable {
         alternativa2 = p.readString();
         alternativa3 = p.readString();
         alternativa4 = p.readString();
+        alternativaCorreta = p.readString();
         urlVideo = p.readString();
     }
 
@@ -84,6 +87,9 @@ public class Questao implements Parcelable {
 
     public void setAlternativa4(String alternativa4){ this.alternativa4 = alternativa4;}
 
+    public String getAlternativaCorreta() { return alternativaCorreta; }
+
+    public void setAlternativaCorreta(String alternativaCorreta) {this.alternativaCorreta = alternativaCorreta;}
 
     public String getUrlVideo()
     {
@@ -104,6 +110,7 @@ public class Questao implements Parcelable {
         parcel.writeString(alternativa2);
         parcel.writeString(alternativa3);
         parcel.writeString(alternativa4);
+        parcel.writeString(alternativaCorreta);
         parcel.writeString(urlVideo);
     }
 }

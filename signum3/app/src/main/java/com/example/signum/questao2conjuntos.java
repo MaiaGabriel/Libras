@@ -8,6 +8,7 @@ import android.text.Html;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -78,6 +79,35 @@ public class questao2conjuntos extends AppCompatActivity {
         vd4.requestFocus();
         vd4.start();
 
+    }
+
+    public void oneRadioButtonClicked(View view) {
+// Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup2);
+
+        switch(view.getId()) {
+            case R.id.radioButton25: {
+                radioGroup.clearCheck();
+                radioGroup.check(R.id.radioButton25);
+                break;
+                }
+            case R.id.radioButton26: {
+                radioGroup.clearCheck();
+                radioGroup.check(R.id.radioButton26);
+                break;
+            }
+            case R.id.radioButton27: {
+                radioGroup.clearCheck();
+                radioGroup.check(R.id.radioButton27);
+                break;
+            }
+            case R.id.radioButton28: {
+                radioGroup.clearCheck();
+                radioGroup.check(R.id.radioButton28);
+                break;
+            }
+        }
     }
 
     public void questao3(View view) {

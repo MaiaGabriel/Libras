@@ -9,18 +9,20 @@ public class Questao2 implements Parcelable {
     private String alternativa2;
     private String alternativa3;
     private String alternativa4;
+    private String alternativaCorreta;
     private String urlVideo;
     private String urlVideo2;
     private String urlVideo3;
     private String urlVideo4;
 
-    public  Questao2(String descricao, String alternativa1,String alternativa2,String alternativa3,String alternativa4, String urlVideo,String urlVideo2,String urlVideo3,String urlVideo4)
+    public  Questao2(String descricao, String alternativa1,String alternativa2,String alternativa3,String alternativa4, String alternativaCorreta, String urlVideo,String urlVideo2,String urlVideo3,String urlVideo4)
     {
         this.descricao = descricao;
         this.alternativa1 = alternativa1;
         this.alternativa2 = alternativa2;
         this.alternativa3 = alternativa3;
         this.alternativa4 = alternativa4;
+        this.alternativaCorreta = alternativaCorreta;
         this.urlVideo = urlVideo;
         this.urlVideo2 = urlVideo2;
         this.urlVideo3 = urlVideo3;
@@ -33,6 +35,7 @@ public class Questao2 implements Parcelable {
         alternativa2 = p.readString();
         alternativa3 = p.readString();
         alternativa4 = p.readString();
+        alternativaCorreta = p.readString();
         urlVideo = p.readString();
         urlVideo2 = p.readString();
         urlVideo3 = p.readString();
@@ -91,6 +94,9 @@ public class Questao2 implements Parcelable {
 
     public void setAlternativa4(String alternativa4){ this.alternativa4 = alternativa4;}
 
+    public String getAlternativaCorreta() {return alternativaCorreta;}
+
+    public void  setAlternativaCorreta(String alternativaCorreta) {this.alternativaCorreta = alternativaCorreta;}
 
     public String getUrlVideo()
     {
@@ -132,6 +138,7 @@ public class Questao2 implements Parcelable {
         parcel.writeString(alternativa2);
         parcel.writeString(alternativa3);
         parcel.writeString(alternativa4);
+        parcel.writeString(alternativaCorreta);
         parcel.writeString(urlVideo);
         parcel.writeString(urlVideo2);
         parcel.writeString(urlVideo3);
