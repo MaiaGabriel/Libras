@@ -34,6 +34,7 @@ public class pop2 extends Activity {
         String video = intent2.getStringExtra("video");
         Uri uri = Uri.parse(video);
         videoView.setVideoURI(uri);
+//        videoView.setOnPreparedListener();
 
         MediaController mediaController = new MediaController(this);
         videoView.setMediaController(mediaController);

@@ -28,6 +28,7 @@ public class nivel1questao extends AppCompatActivity {
         String alternativa2 = q.get(0).getAlternativa2();
         String alternativa3 = q.get(0).getAlternativa3();
         String alternativa4 = q.get(0).getAlternativa4();
+        int pontuacao = 0;
         String alternativaCorreta = q.get(0).getAlternativaCorreta();
 //        String video = q.get(0).getUrlVideo();
         TextView pergunta = (TextView) findViewById(R.id.textView3);
@@ -47,6 +48,8 @@ public class nivel1questao extends AppCompatActivity {
 
         RadioButton alternativ4 = (RadioButton) findViewById(R.id.radioButton24);
         alternativ4.setText(Html.fromHtml("<b>" + alternativa4 + "</b>"));
+
+
 
 
 //        MediaController mediaController = new MediaController(this);

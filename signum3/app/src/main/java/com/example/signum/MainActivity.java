@@ -185,7 +185,92 @@ public class MainActivity extends AppCompatActivity
 
     public void testeFuncoes(View view)
     {
+        ArrayList<Questao> questaoArrayList = new ArrayList<Questao>();
+        Questao questao1 = new Questao("1 - Seja a função f definida por f(x) = 3x – 2, onde f(1) = 3*1 – 2 = 1, determine o valor de f(5) + f(0):",
+                "a) 11",
+                "b) 10",
+                "c) 21",
+                "d) 20",
+                "a) 11" ,
+                "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+        questaoArrayList.add(questao1);
+        Questao questao2 = new Questao("Dadas as funções f(x) = x – 5 e g(x) = 3x + 1, o valor da soma de f(9) + g(2) é:",
+                "a) 10",
+                "b) 9",
+                "c) 8",
+                "d) 11",
+                "d) 11" ,
+                "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+        questaoArrayList.add(questao2);
+        Questao questao3 = new Questao("Na produção de peças, uma fábrica tem um custo fixo de R$ 30,00 mais um custo variável de R$ 2,00 por unidade produzida. Sendo x o número de peças unitárias produzidas, determine o custo de produção de 100 peças:",
+                "a) 300",
+                "b) 320",
+                "c) 230",
+                "d) 120",
+                "c) 230" ,
+                "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+        questaoArrayList.add(questao3);
+        Questao questao4 = new Questao("Um motorista de táxi cobra R$ 4,50 de bandeirada mais R$ 0,90 por quilômetro rodado. Sabendo que o preço a pagar é dado em função do número de quilômetros rodados, calcule o preço a ser pago por uma corrida em que se percorreu 22 quilômetros?",
+                "a) 24,30",
+                "b) 20,30",
+                "c) 21,20",
+                "d) 22,00",
+                "a) 24,30" ,
+                "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+        questaoArrayList.add(questao4);
+        Questao questao5 = new Questao("Classifique cada uma das funções seguintes em crescente ou decrescente: y = 4x + 6 ; f(x) = – x + 10",
+                "a) Crescente e crescente",
+                "b) Decrescente e crescente",
+                "c) Crescente e decrescente",
+                "d) Decrescente e decrescente",
+                "c) Crescente e decrescente" ,
+                "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+        questaoArrayList.add(questao5);
 
+
+        Intent intent4 = new Intent(view.getContext(), nivel1questao.class);
+        intent4.putParcelableArrayListExtra("questoes",questaoArrayList);
+        startActivity(intent4);
+    }
+
+    public void testeFuncoesTrigonometricas(View view)
+    {
+        ArrayList<Questao> questaoArrayList = new ArrayList<Questao>();
+        Questao questao1 = new Questao("1) O período da função f(x) = 5 + sen (3x – 2) é:",
+                "a) 3π",
+                "b) 2π/3",
+                "c) 3π – 2",
+                "d) π/3 – 2",
+                "b) 2π/3" ,
+                "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+        questaoArrayList.add(questao1);
+        Questao questao2 = new Questao("2) Dê o domínio, a imagem e o período da função y = sen x/2:",
+                "a) D(f) = R; Im(f) = [-1, 1]; período 4π.",
+                "b) D(f) = R; Im(f) = [-1, 1]; período 2π.",
+                "c) D(f) = R; Im(f) = [-1, -1]; período 20π.",
+                "d) D(f) = R; Im(f) = [0, 1]; período π.",
+                "a) D(f) = R; Im(f) = [-1, 1]; período 4π." ,
+                "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+        questaoArrayList.add(questao2);
+        Questao questao3 = new Questao("3) Na função y = sen (mx), determinar m tal que o período da função seja π",
+                "a) m = 4 ou m = - 4",
+                "b) m = 2 ou m = - 2",
+                "c) m = 3 ou m = - 3",
+                "d) m = 1 ou m = - 1",
+                "b) m = 2 ou m = - 2" ,
+                "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+        questaoArrayList.add(questao3);
+        Questao questao4 = new Questao("4) Se cos 2x = 0,2, então tg² x é igual a:",
+                "a) 1/2",
+                "b) 2/3",
+                "c) 3/4",
+                "d) 4/3",
+                "b) 2/3" ,
+                "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+        questaoArrayList.add(questao4);
+        Intent intent4 = new Intent(view.getContext(), nivel1questao.class);
+        intent4.putParcelableArrayListExtra("questoes",questaoArrayList);
+        startActivity(intent4);
     }
 
 
