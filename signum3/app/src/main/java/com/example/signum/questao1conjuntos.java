@@ -16,6 +16,10 @@ import java.util.ArrayList;
 
 public class questao1conjuntos extends AppCompatActivity {
 
+    int pontuacao = 0;
+    int tamanho = 0;
+    final int pontuacaoMinima = 7;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,7 @@ public class questao1conjuntos extends AppCompatActivity {
         String alternativaCorreta = q.get(0).getAlternativaCorreta();
         String video = q.get(0).getUrlVideo();
         TextView pergunta = (TextView) findViewById(R.id.textView3);
+        tamanho = q.size();
 
         pergunta.setText(Html.fromHtml(
                 " <b>" + descricao +
@@ -47,6 +52,9 @@ public class questao1conjuntos extends AppCompatActivity {
         RadioButton alternativ4 = (RadioButton) findViewById(R.id.radioButton24);
         alternativ4.setText(Html.fromHtml("<b>" + alternativa4 + "</b>"));
 
+        TextView textView = (TextView) findViewById(R.id.textView2);
+        textView.setText(Html.fromHtml("Pontuação: " + pontuacao +"/" + tamanho));
+
 
         MediaController mediaController = new MediaController(this);
         VideoView vd = (VideoView) findViewById(R.id.videoView8);
@@ -61,9 +69,10 @@ public class questao1conjuntos extends AppCompatActivity {
     public void proximaQuestao(View view) {
         ArrayList<Questao> q = new ArrayList<Questao>();
         q = getIntent().getParcelableArrayListExtra("questoes");
-
+        pontuacao++;
 
         if (q.size() == 1){
+
             finish();
         }else {
             q.remove(0);
@@ -92,6 +101,9 @@ public class questao1conjuntos extends AppCompatActivity {
             RadioButton alternativ4 = (RadioButton) findViewById(R.id.radioButton24);
             alternativ4.setText(Html.fromHtml("<b>" + alternativa4 + "</b>"));
 
+            TextView textView = (TextView) findViewById(R.id.textView2);
+            textView.setText(Html.fromHtml("Pontuação: " + pontuacao +"/" + tamanho));
+
 
             MediaController mediaController = new MediaController(this);
             VideoView vd = (VideoView) findViewById(R.id.videoView8);
@@ -103,11 +115,11 @@ public class questao1conjuntos extends AppCompatActivity {
         }
     }
 
-    public void questao2(View view) {
-        Questao2 questao2 = new Questao2("Qual das figuras representa a palava conjunto natural?","a","b","c","d", "d" ,"https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4","https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4","https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4","https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
-        Intent intent4 = new Intent(view.getContext(), questao2conjuntos.class);
-        intent4.putExtra("questao2", questao2);
-        startActivity(intent4);
-
-    }
+//    public void questao2(View view) {
+//        Questao2 questao2 = new Questao2("Qual das figuras representa a palava conjunto natural?","a","b","c","d", "d" ,"https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4","https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4","https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4","https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+//        Intent intent4 = new Intent(view.getContext(), questao2conjuntos.class);
+//        intent4.putExtra("questao2", questao2);
+//        startActivity(intent4);
+//
+//    }
 }

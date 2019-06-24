@@ -16,6 +16,10 @@ import java.util.ArrayList;
 
 public class nivel1questao extends AppCompatActivity {
 
+    int pontuacao = 0;
+    int tamanho = 0;
+    final int pontuacaoMinima = 7;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +32,10 @@ public class nivel1questao extends AppCompatActivity {
         String alternativa2 = q.get(0).getAlternativa2();
         String alternativa3 = q.get(0).getAlternativa3();
         String alternativa4 = q.get(0).getAlternativa4();
-        int pontuacao = 0;
         String alternativaCorreta = q.get(0).getAlternativaCorreta();
 //        String video = q.get(0).getUrlVideo();
         TextView pergunta = (TextView) findViewById(R.id.textView3);
+        tamanho = q.size();
 
         pergunta.setText(Html.fromHtml(
                 " <b>" + descricao +
@@ -49,6 +53,8 @@ public class nivel1questao extends AppCompatActivity {
         RadioButton alternativ4 = (RadioButton) findViewById(R.id.radioButton24);
         alternativ4.setText(Html.fromHtml("<b>" + alternativa4 + "</b>"));
 
+        TextView textView = (TextView) findViewById(R.id.textView4);
+        textView.setText(Html.fromHtml("Pontuação: " + pontuacao +"/" + tamanho));
 
 
 
@@ -67,7 +73,7 @@ public class nivel1questao extends AppCompatActivity {
     public void proximaQuestao(View view) {
         ArrayList<Questao> q = new ArrayList<Questao>();
         q = getIntent().getParcelableArrayListExtra("questoes");
-
+        pontuacao++;
 
         if (q.size() == 1) {
             finish();
@@ -98,6 +104,8 @@ public class nivel1questao extends AppCompatActivity {
             RadioButton alternativ4 = (RadioButton) findViewById(R.id.radioButton24);
             alternativ4.setText(Html.fromHtml("<b>" + alternativa4 + "</b>"));
 
+            TextView textView = (TextView) findViewById(R.id.textView4);
+            textView.setText(Html.fromHtml("Pontuação: " + pontuacao +"/" + tamanho));
         }
     }
 
