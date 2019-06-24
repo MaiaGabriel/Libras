@@ -17,8 +17,8 @@ public class ListaTreinamento extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_treinamento);
 
-        final String[] video_str = {"Conjuntos", "funções", "Sinal de funções", "funções trigonometricas", "funções exponenciais",
-                "funções logaritmicas", "funções compostas", "funções inversas"};
+        final String[] video_str = {"Conjuntos", "funções", "funções trigonometricas", "funções exponenciais e logaritmicas"
+                ,"funções compostas e inversas"};
 
         ListView listView = (ListView) findViewById(R.id.listatreinamento);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, video_str);
