@@ -84,7 +84,7 @@ public class questao2conjuntos extends AppCompatActivity {
     public void oneRadioButtonClicked(View view) {
 // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup2);
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
         switch(view.getId()) {
             case R.id.radioButton25: {

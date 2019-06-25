@@ -24,23 +24,23 @@ public class ListaGlossario extends AppCompatActivity {
 
 
         final Hashtable<String, String> videos = new Hashtable<String, String>();
-        videos.put("adicao", "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4");
-        videos.put("conjunto natural", "https://signum.s3-us-west-2.amazonaws.com/Conjunto_natural.mp4");
-        videos.put("conjunto ser colecao objeto definicao", "https://signum.s3-us-west-2.amazonaws.com/Conjunto_ser_colecao_objeto_definicao.mp4");
-        videos.put("conjunto irracionais", "https://signum.s3-us-west-2.amazonaws.com/Conjuntos_Irracionais.mp4");
-        videos.put("conjunto racionais","https://signum.s3-us-west-2.amazonaws.com/Conjuntos_Racionais.mp4");
-        videos.put("conjunto inteiros","https://signum.s3-us-west-2.amazonaws.com/Conjuntos_inteiros.mp4");
-        videos.put("conjunto reais","https://signum.s3-us-west-2.amazonaws.com/Conjuntos_reais.mp4");
-        videos.put("divisao", "https://signum.s3-us-west-2.amazonaws.com/divisao_traducao.mp4");
-        videos.put("intervalo aberto","https://signum.s3-us-west-2.amazonaws.com/intervalo_aberto_traducao");
-        videos.put("intervalo fechado", "https://signum.s3-us-west-2.amazonaws.com/intervalo_fechado_traducao.mp4");
-        videos.put("intervalo semiaberto","https://signum.s3-us-west-2.amazonaws.com/intervalo_semiaberto.mp4");
-        videos.put("multiplicacao", "https://signum.s3-us-west-2.amazonaws.com/multiplicacao_traducao.mp4");
-        videos.put("negativo","https://signum.s3-us-west-2.amazonaws.com/negativo_traducao.mp4");
-        videos.put("conjunto chamar elemento", "https://signum.s3-us-west-2.amazonaws.com/objeto_conjunto_chamar_elemento_definicao.mp4");
-        videos.put("positivos", "https://signum.s3-us-west-2.amazonaws.com/positivo_traducao.mp4");
-        videos.put("subconjunto", "https://signum.s3-us-west-2.amazonaws.com/subconjunto_traducao.mp4");
-        videos.put("subtracao", "https://signum.s3-us-west-2.amazonaws.com/subtracao.mp4");
+        videos.put("adicao", "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4");
+        videos.put("conjunto natural", "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/conjuntosnaturais.mp4");
+        videos.put("conjunto ser colecao objeto definicao", "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/Conjunto_ser_colecao_objeto_definicao.mp4");
+        videos.put("conjunto irracionais", "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/Conjuntos_Irracionais.mp4\n");
+        videos.put("conjunto racionais","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/Conjuntos_Racionais.mp4");
+        videos.put("conjunto inteiros","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/Conjuntos_inteiros.mp4");
+        videos.put("conjunto reais","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/Conjuntos_reais.mp4");
+        videos.put("divisao", "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/divisao_traducao.mp4");
+        videos.put("intervalo aberto","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/intervaloaberto.mp4");
+        videos.put("intervalo fechado", "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/intervalo_fechado_traducao.mp4");
+        videos.put("intervalo semiaberto","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/intervalo_semiaberto.mp4");
+        videos.put("multiplicacao", "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/multiplicacao_traducao.mp4");
+        videos.put("negativo","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/negativo_traducao.mp4");
+        videos.put("conjunto chamar elemento", "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/objeto_conjunto_chamar_elemento_definicao.mp4");
+        videos.put("positivos", "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/positivos.mp4");
+        videos.put("subconjunto", "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/subconjunto_traducao.mp4");
+        videos.put("subtracao", "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/subtracao.mp4");
 
 
         /*String vid = null;

@@ -112,7 +112,6 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Tela_Principal_Fragment()).commit();
 
-
         } else if (id == R.id.nav_meuscursos) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Meus_cursos_Fragment()).commit();
         } else if (id == R.id.nav_teste) {
@@ -288,6 +287,11 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, ListaTreinamento.class);
         startActivity(intent);
 
+    }
+
+    public void semCursos(View view){
+        Snackbar.make(view, "Sem cursos disponíveis no momento.", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
     }
 
 

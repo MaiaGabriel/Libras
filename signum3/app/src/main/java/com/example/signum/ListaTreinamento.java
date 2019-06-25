@@ -29,8 +29,8 @@ public class ListaTreinamento extends AppCompatActivity {
 
                 if(i == 0)
                 {
-                    Questao questao1 = new Questao("qual significado desse sinal?","adição","subtração","multiplicação","divisão", "adição" ,"https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
-                    Questao questao2 = new Questao("Qual a tradução da frase a seguir?","9 é um número natural","9 é um número real","9 é faz parte do conjunto dos racionais","9 faz parte dos conjuntos dos reais", "9 faz parte dos conjuntos dos reais" , "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+                    Questao questao1 = new Questao("qual significado desse sinal?","adição","subtração","multiplicação","divisão", "adição" ,"https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4"  );
+                    Questao questao2 = new Questao("Qual a tradução da frase a seguir?","9 é um número natural","9 é um número real","9 é faz parte do conjunto dos racionais","9 faz parte dos conjuntos dos reais", "9 faz parte dos conjuntos dos reais" , "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4"  );
                     ArrayList<Questao> questaoArrayList = new ArrayList<Questao>();
                     questaoArrayList.add(questao1);
                     questaoArrayList.add(questao2);

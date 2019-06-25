@@ -6,29 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".pop2">
 
-    <FrameLayout
-        android:layout_width="377dp"
-        android:layout_height="621dp"
+    <VideoView
+        android:id="@+id/videoView3"
+        android:layout_width="416dp"
+        android:layout_height="731dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <VideoView
-            android:id="@+id/videoView3"
-            android:layout_width="359dp"
-            android:layout_height="546dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
