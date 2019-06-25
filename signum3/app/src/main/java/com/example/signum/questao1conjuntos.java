@@ -165,22 +165,22 @@ public class questao1conjuntos extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.radioButton21: {
                 button.setClickable(true);
-                button.setBackgroundResource(R.drawable.roundcornerblue);
+                button.setBackgroundResource(R.drawable.roundcorner);
                 break;
             }
             case R.id.radioButton22: {
                 button.setClickable(true);
-                button.setBackgroundResource(R.drawable.roundcornerblue);
+                button.setBackgroundResource(R.drawable.roundcorner);
                 break;
             }
             case R.id.radioButton23: {
                 button.setClickable(true);
-                button.setBackgroundResource(R.drawable.roundcornerblue);
+                button.setBackgroundResource(R.drawable.roundcorner);
                 break;
             }
             case R.id.radioButton24: {
                 button.setClickable(true);
-                button.setBackgroundResource(R.drawable.roundcornerblue);
+                button.setBackgroundResource(R.drawable.roundcorner);
                 break;
             }
         }

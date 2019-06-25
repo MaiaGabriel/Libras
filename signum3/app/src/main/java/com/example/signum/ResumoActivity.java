@@ -40,20 +40,12 @@ public class ResumoActivity extends AppCompatActivity {
 
     public void iniciarTeste(View view)
     {
-        ArrayList<Questao> questaoArrayList = new ArrayList<Questao>();
-        Questao questao1 = new Questao("Pergunta: qual a tradução da frase a seguir?","Um conjunto é uma coleção de números naturais","Um conjunto é uma coleção de números","Um conjunto é uma coleção de objetos","O número pertence ao conjunto dos naturais", "Um conjunto é uma coleção de objetos" ,"https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/Conjunto_ser_colecao_objeto_definicao.mp4"  );
-        questaoArrayList.add(questao1);
-        Questao questao2 = new Questao("Qual o significado do vídeo a seguir?","subtração","Conjunto irracional","Conjunto Natural","adição", "adição" , "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4"  );
-        questaoArrayList.add(questao2);
-        Questao questao3 = new Questao("Que tipo de conjunto o vídeo es","subtração","Conjunto irracional","Conjunto Natural","adição", "adição" , "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4"  );
-        questaoArrayList.add(questao3);
-        Questao questao4 = new Questao("Qual o significado do vídeo a seguir?","subtração","Conjunto irracional","Conjunto Natural","adição", "adição" , "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4"  );
-        questaoArrayList.add(questao4);
-
+        ArrayList<Questao> q = new ArrayList<Questao>();
+        q = getIntent().getParcelableArrayListExtra("questoes");
 
 
         Intent intent4 = new Intent(view.getContext(), questao1conjuntos.class);
-        intent4.putParcelableArrayListExtra("questoes",questaoArrayList);
+        intent4.putParcelableArrayListExtra("questoes",q);
         startActivity(intent4);
     }
 
