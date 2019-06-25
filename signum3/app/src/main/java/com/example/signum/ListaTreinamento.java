@@ -39,7 +39,7 @@ public class ListaTreinamento extends AppCompatActivity {
                     Questao questao4 = new Questao("Qual o significado do vídeo a seguir?","subtração","Conjunto irracional","Conjunto Natural","adição", "adição" , "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4"  );
                     questaoArrayList.add(questao4);
 
-                    Resumo resumo = new Resumo("drawable-v24/imagem_conjunto_resumo.jpeg",
+                    Resumo resumo = new Resumo("imagem_conjunto_resumo",
                             "Conjunto dos números naturais: É representado por todos os números positivos. Seu símbolo é o N maiúsculo.\n" +
                                     "Conjunto dos números inteiros: Esse conjunto é formado pelos elementos do conjunto dos números naturais e os números inteiros negativos. Ele é representado pela letra maiúscula Z.\n" +
                                     "Conjunto dos números racionais: É representado pela letra maiúscula Q. Pertencem a esse conjunto os números naturais, inteiros, decimais, fracionários e dízima periódica.\n" +
@@ -58,7 +58,7 @@ public class ListaTreinamento extends AppCompatActivity {
                     questaoArrayList.add(questao1);
                     questaoArrayList.add(questao2);
 
-                    Resumo resumo = new Resumo("drawable-v24/imagem_funcao.jpeg", "Uma função f (ou aplicação) é uma relação entre dois conjuntos quaisquer, A e B, e uma regra que permite associar a cada elemento de A um único elemento de B. Isto quer dizer, em linguagem matemática, que: f : A → B\n" +
+                    Resumo resumo = new Resumo("imagem_funcao", "Uma função f (ou aplicação) é uma relação entre dois conjuntos quaisquer, A e B, e uma regra que permite associar a cada elemento de A um único elemento de B. Isto quer dizer, em linguagem matemática, que: f : A → B\n" +
                             "Domínio, contradomínio e imagem: Vamos analisar a função definida por: f : A → B, f(x) = x+1, sendo A = {1,2} e B = {2,3,4}.\n" +
                             "Podemos dizer que:\n" +
                             "Domínio: de onde partem as flechas;\n" +
@@ -66,7 +66,7 @@ public class ListaTreinamento extends AppCompatActivity {
                             "Imagem: os elementos foram atingidos pelas flechas.",
                             "Função");
 
-                    Intent intent = new Intent(view.getContext(), questao1conjuntos.class);
+                    Intent intent = new Intent(view.getContext(), ResumoActivity.class);
                     intent.putExtra("Resumo", resumo);
                     intent.putParcelableArrayListExtra("questoes",questaoArrayList);
                     startActivity(intent);
@@ -79,7 +79,7 @@ public class ListaTreinamento extends AppCompatActivity {
                     questaoArrayList.add(questao1);
                     questaoArrayList.add(questao2);
 
-                    Resumo resumo = new Resumo("drawable-v24/imagem_funcoes_trigonometricas.png",
+                    Resumo resumo = new Resumo("imagem_funcoes_trigonometricas",
                             "A palavra trigonometria significa “medida dos triângulos”. Mas a trigonometria não se limita apenas a estudar triângulos. Sua aplicação se estende na outros campos da matemática, como a Análise, e a outros campos da atividade humana como a Eletricidade, a Mecânica, a Acústica, a Música, a Topologia, a Engenharia Civil, etc.\n" +
                                     "\n" +
                                     "Algumas funções são muito importantes para entender a trigonometria e ela estão listadas abaixo:\n" +
@@ -118,6 +118,7 @@ public class ListaTreinamento extends AppCompatActivity {
 
                     Intent intent = new Intent(view.getContext(), ResumoActivity.class);
                     intent.putExtra("Resumo", resumo);
+                    intent.putParcelableArrayListExtra("questoes",questaoArrayList);
                     startActivity(intent);
                 }
 
@@ -129,7 +130,7 @@ public class ListaTreinamento extends AppCompatActivity {
                     questaoArrayList.add(questao2);
 
 
-                    Resumo resumo = new Resumo("drawable-v24/imagem_exponenciais_logaritmicas.png",
+                    Resumo resumo = new Resumo("imagem_exponenciais_logaritmicas",
                             "Função Exponencial é aquela que a variável está no expoente e cuja base é sempre maior que zero e diferente de um.\n" +
                                     "Essas restrições são necessárias, pois 1 elevado a qualquer número resulta em 1. Assim, em vez de exponencial, estaríamos diante de uma função constante.\n" +
                                     "Além disso, a base não pode ser negativa, nem igual a zero, pois para alguns expoentes a função não estaria definida.\n" +
@@ -150,6 +151,7 @@ public class ListaTreinamento extends AppCompatActivity {
 
                     Intent intent = new Intent(view.getContext(), ResumoActivity.class);
                     intent.putExtra("Resumo", resumo);
+                    intent.putParcelableArrayListExtra("questoes",questaoArrayList);
                     startActivity(intent);
                 }
 
@@ -161,7 +163,7 @@ public class ListaTreinamento extends AppCompatActivity {
                     questaoArrayList.add(questao2);
 
 
-                    Resumo resumo = new Resumo("drawable-v24/imagem_composta_inversa.jpg",
+                    Resumo resumo = new Resumo("imagem_composta_inversa",
                             "Função Composta\n" +
                                     "\n" +
                                     "A função composta, também chamada de função de função, é um tipo de função matemática que combina duas ou mais variáveis.\n" +
@@ -190,6 +192,7 @@ public class ListaTreinamento extends AppCompatActivity {
 
                     Intent intent = new Intent(view.getContext(), ResumoActivity.class);
                     intent.putExtra("Resumo", resumo);
+                    intent.putParcelableArrayListExtra("questoes",questaoArrayList);
                     startActivity(intent);
                 }
 

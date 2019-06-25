@@ -3,6 +3,8 @@ package com.example.signum;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -29,12 +31,14 @@ public class ResumoActivity extends AppCompatActivity {
         titulo = resumo.getTitulo();
         texto = resumo.getTexto();
 
+        Resources res = getResources();
         imagemView = (ImageView) findViewById(R.id.imagemResumo);
         tituloView = (TextView) findViewById(R.id.tituloResumo);
         textoView = (TextView) findViewById(R.id.textoResumo);
-        imagemView.setImageResource(R.drawable.imagem_conjunto_resumo);
+        int resID = res.getIdentifier(imagem , "drawable", getPackageName());
+        imagemView.setImageResource(resID);
         textoView.setText(texto);
-        tituloView.setText(texto);
+        tituloView.setText(titulo);
 
     }
 
