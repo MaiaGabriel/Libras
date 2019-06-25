@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Sem notificações!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+//                Intent intent = new Intent(view.getContext(), ResumoActivity.class);
+//                startActivity(intent);
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -293,6 +296,8 @@ public class MainActivity extends AppCompatActivity
         Snackbar.make(view, "Sem cursos disponíveis no momento.", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
     }
+
+
 
 
 
