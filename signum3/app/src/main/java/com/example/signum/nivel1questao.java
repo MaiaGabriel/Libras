@@ -86,6 +86,7 @@ public class nivel1questao extends AppCompatActivity {
         button.setVisibility(View.INVISIBLE);
         button1.setVisibility(View.VISIBLE);
         button1.setClickable(true);
+//        radioGroup.clearCheck();
         if(q.get(0).getAlternativaCorreta().equals(opcaoEscolhida.getText().toString())){
             pontuacao++;
             TextView textView = (TextView) findViewById(R.id.textView4);

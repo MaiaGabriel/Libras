@@ -9,8 +9,52 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class ListaTreinamento extends AppCompatActivity {
+
+    String[] alternativasConjunto = {"adição","subtração", "multiplicação", "divisão", "sinal positivo", "sinal negativo",
+            "Conjunto irracional", "Conjunto racional", "Conjunto dos naturais", "Conjunto dos reais", "conjunto dos inteiros",
+            "intervalo fechado", "intervalo aberto", "intervalo semi-aberto", "subconjunto"};
+    String[] alternativasFuncoes = {"Função crescente", "dominio da função", "função ímpar", "função par", "função nem ímpar nem par",
+            "função de primeiro grau", "função de segundo grau", "funções decrescentes", "grafico de uma função", "imagem da função",
+            "plano carteseano"};
+    String[] alternativasTrigonometricas = {"arcos angulos", "circulo trigonometrico", "dominio da função cosseno",
+    "dominio da função seno", "função seno", "função cosseno",
+    "função tangente", "propriedades trigonometricas", "periodo", "relações trigonometricas"};
+    String[] alternativasExponenciais = {"definição de função exponencial", "inversões exponenciais", "raiz em funções exponenciais",
+            "variaveis logaritmicas", "mutiplicação", "frações exponenciais"};
+    String[] alternativasCompostasEInversas = {"definição Funções compostas",
+            "sinal função seno", "sinal função cosseno", "variaveis logaritmicas", "inversões exponenciais"};
+
+    String[] alternativas = {"", "", "", ""};
+
+
+
+    public String[] randomizer (String alternativaCorreta,String[] vetor)
+    {
+        String[] questoes = {"","","",""};
+        String[] copiaVetor = vetor;
+        Random rand = new Random();
+        String alternativaEmPotencial;
+        int n = rand.nextInt(4);
+        questoes[n] = alternativaCorreta;
+        for (int i=0; i<3; ) {
+            n = rand.nextInt(copiaVetor.length);
+            alternativaEmPotencial = copiaVetor[n];
+            if (questoes[0] != alternativaEmPotencial &&  questoes[1] != alternativaEmPotencial
+                    && questoes[2] != alternativaEmPotencial && questoes[3] != alternativaEmPotencial){
+                i++;
+                for (int j=0; j<4 ; j++){
+                    if (questoes[j] == ""){
+                        questoes[j] = alternativaEmPotencial;
+                        break;
+                    }
+                }
+            }
+        }
+        return questoes;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +63,7 @@ public class ListaTreinamento extends AppCompatActivity {
 
         final String[] video_str = {"Conjuntos", "funções", "funções trigonometricas", "funções exponenciais e logaritmicas"
                 ,"funções compostas e inversas"};
+
 
         ListView listView = (ListView) findViewById(R.id.listatreinamento);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, video_str);
@@ -30,14 +75,35 @@ public class ListaTreinamento extends AppCompatActivity {
                 if(i == 0)
                 {
                     ArrayList<Questao> questaoArrayList = new ArrayList<Questao>();
-                    Questao questao1 = new Questao("Pergunta: qual a tradução da frase a seguir?","Um conjunto é uma coleção de números naturais","Um conjunto é uma coleção de números","Um conjunto é uma coleção de objetos","O número pertence ao conjunto dos naturais", "Um conjunto é uma coleção de objetos" ,"https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/Conjunto_ser_colecao_objeto_definicao.mp4"  );
+                    alternativas = randomizer("Um conjunto é uma coleção de objetos", alternativasConjunto);
+                    Questao questao1 = new Questao("Pergunta: qual a tradução dos sinais acima?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "Um conjunto é uma coleção de objetos","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/Conjunto_ser_colecao_objeto_definicao.mp4");
                     questaoArrayList.add(questao1);
-                    Questao questao2 = new Questao("Qual o significado do vídeo a seguir?","subtração","Conjunto irracional","Conjunto Natural","adição", "adição" , "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4"  );
+                    alternativas = randomizer("adição", alternativasConjunto);
+                    Questao questao2 = new Questao("Qual o significado do vídeo acima?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "adição","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4");
                     questaoArrayList.add(questao2);
-                    Questao questao3 = new Questao("Que tipo de conjunto o vídeo es","subtração","Conjunto irracional","Conjunto Natural","adição", "adição" , "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4"  );
+                    alternativas = randomizer("Conjunto irracional", alternativasConjunto);
+                    Questao questao3 = new Questao("Que tipo de conjunto o vídeo acima está descrevendo?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "Conjunto irracional","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/Conjuntos_Irracionais.mp4");
                     questaoArrayList.add(questao3);
-                    Questao questao4 = new Questao("Qual o significado do vídeo a seguir?","subtração","Conjunto irracional","Conjunto Natural","adição", "adição" , "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4"  );
+                    alternativas = randomizer("subtração", alternativasConjunto);
+                    Questao questao4 = new Questao("Qual o significado do vídeo a seguir?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "subtração","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/subtracao.mp4");
                     questaoArrayList.add(questao4);
+                    alternativas = randomizer("Conjunto Natural", alternativasConjunto);
+                    Questao questao5 = new Questao("Que tipo de conjunto o vídeo acima está descrevendo?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "Conjunto Natural","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/conjuntosnaturais.mp4");
+                    questaoArrayList.add(questao5);
+                    Questao questao6 = new Questao("Qual o significado do sinal acima?","Um conjunto é uma coleção de objetos","Um conjunto é uma coleção de números naturais","O objeto de um conjunto se chama subconjunto","O objeto de um conjunto se chama elemento", "O objeto de um conjunto se chama elemento" , "https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/objeto_conjunto_chamar_elemento_definicao.mp4"  );
+                    questaoArrayList.add(questao6);
+                    alternativas = randomizer("intervalo aberto", alternativasConjunto);
+                    Questao questao7 = new Questao("Qual tipo de intervalo o vídeo acima está descrevendo?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "intervalo aberto","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/intervaloaberto.mp4");
+                    questaoArrayList.add(questao7);
+                    alternativas = randomizer("divisão", alternativasConjunto);
+                    Questao questao8 = new Questao("Qual o significado do vídeo acima?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "divisão","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/adicao1.mp4");
+                    questaoArrayList.add(questao8);
+                    alternativas = randomizer("conjunto dos inteiros", alternativasConjunto);
+                    Questao questao9 = new Questao("Que tipo de conjunto o vídeo acima está descrevendo?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "conjunto dos inteiros","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/conjuntosinteiros.MP4");
+                    questaoArrayList.add(questao9);
+                    alternativas = randomizer("intervalo fechado", alternativasConjunto);
+                    Questao questao10 = new Questao("Qual tipo de intervalo o vídeo acima está descrevendo?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "intervalo fechado","https://signum.s3-us-west-2.amazonaws.com/conjunto_dos_numeros_reais/intervalo_fechado_traducao.mp4");
+                    questaoArrayList.add(questao10);
 
                     Resumo resumo = new Resumo("imagem_conjunto_resumo",
                             "Conjunto dos números naturais: É representado por todos os números positivos. Seu símbolo é o N maiúsculo.\n" +
@@ -52,11 +118,40 @@ public class ListaTreinamento extends AppCompatActivity {
                 }
                 if(i == 1)
                 {
-                    Questao questao1 = new Questao("qual significado desse sinal?","adição","subtração","multiplicação","divisão", "adição" ,"https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
-                    Questao questao2 = new Questao("Qual a tradução da frase a seguir?","9 é um número natural","9 é um número real","9 é faz parte do conjunto dos racionais","9 faz parte dos conjuntos dos reais", "9 faz parte dos conjuntos dos reais" , "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+
                     ArrayList<Questao> questaoArrayList = new ArrayList<Questao>();
+                    alternativas = randomizer("Função crescente", alternativasFuncoes);
+                    Questao questao1 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "Função crescente","https://signum.s3-us-west-2.amazonaws.com/funcoes/funcoes_crescentes.MP4");
                     questaoArrayList.add(questao1);
+                    alternativas = randomizer("dominio da função", alternativasFuncoes);
+                    Questao questao2 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "dominio da função","https://signum.s3-us-west-2.amazonaws.com/funcoes/dominio_da_funcao.MP4");
                     questaoArrayList.add(questao2);
+                    alternativas = randomizer("função ímpar", alternativasFuncoes);
+                    Questao questao3 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "função ímpar","https://signum.s3-us-west-2.amazonaws.com/funcoes/funcao_impar.MP4");
+                    questaoArrayList.add(questao3);
+                    alternativas = randomizer("função nem ímpar nem par", alternativasFuncoes);
+                    Questao questao4 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "função nem ímpar nem par","https://signum.s3-us-west-2.amazonaws.com/funcoes/funcao_nem_par_nem_impar.MP4");
+                    questaoArrayList.add(questao4);
+                    alternativas = randomizer("função de primeiro grau", alternativasFuncoes);
+                    Questao questao5 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "função de primeiro grau","https://signum.s3-us-west-2.amazonaws.com/funcoes/funcao_primeiro_grau.MP4");
+                    questaoArrayList.add(questao5);
+                    alternativas = randomizer("função de segundo grau", alternativasConjunto);
+                    Questao questao6 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "função de segundo grau","https://signum.s3-us-west-2.amazonaws.com/funcoes/funcao_segundo_grau.MP4");
+                    questaoArrayList.add(questao6);
+                    alternativas = randomizer("grafico de uma função", alternativasFuncoes);
+                    Questao questao7 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "grafico de uma função","https://signum.s3-us-west-2.amazonaws.com/funcoes/grafico_de_uma_funcao.MP4");
+                    questaoArrayList.add(questao7);
+                    alternativas = randomizer("imagem da função", alternativasFuncoes);
+                    Questao questao8 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "imagem da função","https://signum.s3-us-west-2.amazonaws.com/funcoes/imagem_da_funcao.MP4");
+                    questaoArrayList.add(questao8);
+                    alternativas = randomizer("plano carteseano", alternativasFuncoes);
+                    Questao questao9 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "plano carteseano","https://signum.s3-us-west-2.amazonaws.com/funcoes/plano_cartesiano.MP4");
+                    questaoArrayList.add(questao9);
+                    alternativas = randomizer("função par", alternativasFuncoes);
+                    Questao questao10 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], "função par","https://signum.s3-us-west-2.amazonaws.com/funcoes/funcao_par.MP4");
+                    questaoArrayList.add(questao10);
+
+
 
                     Resumo resumo = new Resumo("imagem_funcao", "Uma função f (ou aplicação) é uma relação entre dois conjuntos quaisquer, A e B, e uma regra que permite associar a cada elemento de A um único elemento de B. Isto quer dizer, em linguagem matemática, que: f : A → B\n" +
                             "Domínio, contradomínio e imagem: Vamos analisar a função definida por: f : A → B, f(x) = x+1, sendo A = {1,2} e B = {2,3,4}.\n" +
@@ -72,12 +167,38 @@ public class ListaTreinamento extends AppCompatActivity {
                     startActivity(intent);
                 }
                 if(i == 2){
-
-                    Questao questao1 = new Questao("qual significado desse sinal?","adição","subtração","multiplicação","divisão", "adição" ,"https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
-                    Questao questao2 = new Questao("Qual a tradução da frase a seguir?","9 é um número natural","9 é um número real","9 é faz parte do conjunto dos racionais","9 faz parte dos conjuntos dos reais", "9 faz parte dos conjuntos dos reais" , "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
                     ArrayList<Questao> questaoArrayList = new ArrayList<Questao>();
+                    alternativas = randomizer(alternativasTrigonometricas[0], alternativasTrigonometricas);
+                    Questao questao1 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasTrigonometricas[0],"https://signum.s3-us-west-2.amazonaws.com/funcoes_trigonometricas/arcos_angulos.MP4");
                     questaoArrayList.add(questao1);
+                    alternativas = randomizer(alternativasTrigonometricas[1], alternativasTrigonometricas);
+                    Questao questao8 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasTrigonometricas[1],"https://signum.s3-us-west-2.amazonaws.com/funcoes_trigonometricas/circulo_trigonometrico.MP4");
+                    questaoArrayList.add(questao8);
+                    alternativas = randomizer(alternativasTrigonometricas[2], alternativasTrigonometricas);
+                    Questao questao2 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasTrigonometricas[2],"https://signum.s3-us-west-2.amazonaws.com/funcoes_trigonometricas/dominio_funcao_cosseno.MP4");
                     questaoArrayList.add(questao2);
+                    alternativas = randomizer(alternativasTrigonometricas[3], alternativasTrigonometricas);
+                    Questao questao3 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasTrigonometricas[3],"https://signum.s3-us-west-2.amazonaws.com/funcoes_trigonometricas/dominio_funcao_seno.MP4");
+                    questaoArrayList.add(questao3);
+                    alternativas = randomizer(alternativasTrigonometricas[4], alternativasTrigonometricas);
+                    Questao questao4 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasTrigonometricas[4],"https://signum.s3-us-west-2.amazonaws.com/funcoes_trigonometricas/funcao_seno.MP4");
+                    questaoArrayList.add(questao4);
+                    alternativas = randomizer(alternativasTrigonometricas[5], alternativasTrigonometricas);
+                    Questao questao5 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasTrigonometricas[5],"https://signum.s3-us-west-2.amazonaws.com/funcoes_trigonometricas/funcao_cosseno.MP4");
+                    questaoArrayList.add(questao5);
+                    alternativas = randomizer(alternativasTrigonometricas[6], alternativasTrigonometricas);
+                    Questao questao6 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasTrigonometricas[6],"https://signum.s3-us-west-2.amazonaws.com/funcoes_trigonometricas/funcao_tangente.MP4");
+                    questaoArrayList.add(questao6);
+                    alternativas = randomizer(alternativasTrigonometricas[7], alternativasTrigonometricas);
+                    Questao questao7 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasTrigonometricas[7],"https://signum.s3-us-west-2.amazonaws.com/funcoes_trigonometricas/propriedades_trigonometricas.MP4");
+                    questaoArrayList.add(questao7);
+                    alternativas = randomizer(alternativasTrigonometricas[8], alternativasTrigonometricas);
+                    Questao questao9 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasTrigonometricas[8],"https://signum.s3-us-west-2.amazonaws.com/funcoes_trigonometricas/periodo.MP4");
+                    questaoArrayList.add(questao9);
+                    alternativas = randomizer(alternativasTrigonometricas[9], alternativasTrigonometricas);
+                    Questao questao10 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasTrigonometricas[9],"https://signum.s3-us-west-2.amazonaws.com/funcoes_trigonometricas/relacoes_trigonometricas.MP4");
+                    questaoArrayList.add(questao10);
+
 
                     Resumo resumo = new Resumo("imagem_funcoes_trigonometricas",
                             "A palavra trigonometria significa “medida dos triângulos”. Mas a trigonometria não se limita apenas a estudar triângulos. Sua aplicação se estende na outros campos da matemática, como a Análise, e a outros campos da atividade humana como a Eletricidade, a Mecânica, a Acústica, a Música, a Topologia, a Engenharia Civil, etc.\n" +
@@ -124,10 +245,25 @@ public class ListaTreinamento extends AppCompatActivity {
 
                 if(i == 3){
                     ArrayList<Questao> questaoArrayList = new ArrayList<Questao>();
-                    Questao questao1 = new Questao("qual significado desse sinal?","adição","subtração","multiplicação","divisão", "adição" ,"https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+
+                    alternativas = randomizer(alternativasExponenciais[0], alternativasExponenciais);
+                    Questao questao0 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasExponenciais[0],"https://signum.s3-us-west-2.amazonaws.com/funcoes_exponenciais_e_logaritmicas/definicao_exponencial.MP4");
+                    questaoArrayList.add(questao0);
+                    alternativas = randomizer(alternativasExponenciais[1], alternativasExponenciais);
+                    Questao questao1 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasExponenciais[1],"https://signum.s3-us-west-2.amazonaws.com/funcoes_exponenciais_e_logaritmicas/inversoes_exponenciais.MP4");
                     questaoArrayList.add(questao1);
-                    Questao questao2 = new Questao("Qual a tradução da frase a seguir?","9 é um número natural","9 é um número real","9 é faz parte do conjunto dos racionais","9 faz parte dos conjuntos dos reais", "9 faz parte dos conjuntos dos reais" , "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
+                    alternativas = randomizer(alternativasExponenciais[2], alternativasExponenciais);
+                    Questao questao2 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasExponenciais[2],"https://signum.s3-us-west-2.amazonaws.com/funcoes_exponenciais_e_logaritmicas/raizes_em_funcoes_exponenciais.MP4");
                     questaoArrayList.add(questao2);
+                    alternativas = randomizer(alternativasExponenciais[3], alternativasExponenciais);
+                    Questao questao3 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasExponenciais[3],"https://signum.s3-us-west-2.amazonaws.com/funcoes_exponenciais_e_logaritmicas/variaiveis_logaritmicas.MP4");
+                    questaoArrayList.add(questao3);
+                    alternativas = randomizer(alternativasExponenciais[4], alternativasExponenciais);
+                    Questao questao4 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasExponenciais[4],"https://signum.s3-us-west-2.amazonaws.com/funcoes_exponenciais_e_logaritmicas/multiplicacao.MP4");
+                    questaoArrayList.add(questao4);
+                    alternativas = randomizer(alternativasExponenciais[5], alternativasExponenciais);
+                    Questao questao5 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasExponenciais[5],"https://signum.s3-us-west-2.amazonaws.com/funcoes_exponenciais_e_logaritmicas/fracoes_exponenciais.MP4");
+                    questaoArrayList.add(questao5);
 
 
                     Resumo resumo = new Resumo("imagem_exponenciais_logaritmicas",
@@ -157,10 +293,10 @@ public class ListaTreinamento extends AppCompatActivity {
 
                 if(i == 4){
                     ArrayList<Questao> questaoArrayList = new ArrayList<Questao>();
-                    Questao questao1 = new Questao("qual significado desse sinal?","adição","subtração","multiplicação","divisão", "adição" ,"https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
-                    questaoArrayList.add(questao1);
-                    Questao questao2 = new Questao("Qual a tradução da frase a seguir?","9 é um número natural","9 é um número real","9 é faz parte do conjunto dos racionais","9 faz parte dos conjuntos dos reais", "9 faz parte dos conjuntos dos reais" , "https://signum.s3-us-west-2.amazonaws.com/Adicao_traducao.mp4"  );
-                    questaoArrayList.add(questao2);
+
+                    alternativas = randomizer(alternativasCompostasEInversas[0], alternativasCompostasEInversas);
+                    Questao questao0 = new Questao("Os sinais acima estão se referindo a qual conceito matematico?",alternativas[0],alternativas[1],alternativas[2],alternativas[3], alternativasCompostasEInversas[0],"https://signum.s3-us-west-2.amazonaws.com/funcoes_compostas_e_inversas/definicao_funcao_composta.MP4");
+                    questaoArrayList.add(questao0);
 
 
                     Resumo resumo = new Resumo("imagem_composta_inversa",
